@@ -1,0 +1,76 @@
+.button {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: #fff;
+   font-family: "Cabin";
+   font-size: toRem(18);
+   font-weight: 600;
+   text-transform: capitalize;
+   background: #6b77e5;
+   padding: toRem(21) toRem(35);
+   flex-shrink: 0;
+   transition: all ease 0.3s;
+   z-index: 5;
+   &:not(:last-child) {
+      margin-right: toRem(5);
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         background: rgba(68, 82, 206, 1);
+      }
+   }
+   @media (max-width: toEm(768.98)) {
+      padding: toRem(10) toRem(18);
+      font-size: toRem(16);
+      &:not(:last-child) {
+         margin-right: toRem(10);
+      }
+   }
+}
+.block-richt {
+   &__label {
+      display: inline-flex;
+      align-items: center;
+      column-gap: toRem(6);
+      color: #37393f;
+      font-size: toRem(18);
+      font-weight: 500;
+      font-family: "Inter";
+      @include adaptiveValue("margin-bottom", 16, 8);
+      &::before {
+         content: "";
+         width: toRem(12);
+         height: toRem(12);
+         background: #40ddb6;
+      }
+   }
+   &__title {
+      color: #37393f;
+      font-family: "Poppins";
+      font-size: toRem(40);
+      font-weight: 700;
+      line-height: 1.21;
+      @include adaptiveValue("font-size", 40, 24);
+      max-width: toRem(413);
+      &:not(:last-child) {
+         margin-bottom: toRem(20);
+      }
+   }
+
+   &__text {
+      color: #7d7d7d;
+      font-size: toRem(18);
+      line-height: 1.46;
+      p {
+         &:not(:last-child) {
+            margin-bottom: toRem(15);
+         }
+      }
+   }
+
+   .button {
+   }
+}
+// ------------------------------------------------------
