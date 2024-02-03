@@ -1,0 +1,192 @@
+.button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   @include adaptiveValue("font-size", 20, 18);
+   font-weight: 700;
+   border-radius: toRem(2);
+   background: $orangecolor;
+   padding: toRem(11) toRem(23);
+   color: $Whitecolor;
+   flex-shrink: 0;
+   border: 1px solid $orangecolor;
+   transition: all ease 0.5s;
+   @media (any-hover: hover) {
+      &:hover {
+         background: inherit;
+         color: $orangecolor;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+   }
+   @media (max-width: toEm(450)) {
+      padding: toRem(8) toRem(15);
+   }
+}
+// ----------------------------------------------------------------------
+
+.header-top {
+   &__sub-title {
+      color: $orangecolor;
+      font-family: "Inter";
+      font-size: toRem(15);
+      text-transform: uppercase;
+      &:not(:last-child) {
+         margin-bottom: toRem(8);
+      }
+   }
+
+   &__title {
+      color: $maincolor;
+      font-family: "DM Serif Text";
+      @include adaptiveValue("font-size", 58, 38);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 27, 15);
+      }
+   }
+
+   &__text {
+      color: $greycolor;
+      font-family: "Cormorant Infant";
+      @include adaptiveValue("font-size", 30, 24);
+      font-weight: 700;
+      line-height: 1.4;
+   }
+}
+// ----------------------MOST-POPULAR-PRODUCT---------------------------------------------------
+.item-product {
+   color: $blackcolor;
+   font-family: "Cormorant Infant";
+   @include adaptiveValue("font-size", 24, 20);
+   font-weight: 700;
+   line-height: 1.4;
+   &__image {
+      display: block;
+      overflow: hidden;
+      img {
+         aspect-ratio: 271 / 270;
+         width: 100%;
+         height: 100%;
+         transition: all ease 0.3s;
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.8s ease 0.3s;
+      &._active {
+         transform: scale(1);
+         opacity: 1;
+      }
+   }
+   &__body {
+      transform: translate(toRem(0), 50%);
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+      &._active {
+         transform: translate(toRem(0), toRem(0));
+         opacity: 1;
+         transition: all 0.8s ease 0.6s;
+      }
+   }
+   &__title {
+      transition: all ease 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+
+   &__price {
+   }
+}
+// ----------------------MOST-POPULAR-PRODUCTS--bottom-page------------------------------------
+.item-products {
+   display: flex;
+   flex-direction: column;
+   &__image {
+      overflow: hidden;
+      img {
+         aspect-ratio: 357 / 240;
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+         transition: all ease 0.3s;
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+      &:not(:last-child) {
+         margin-bottom: toRem(16);
+      }
+   }
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: toRem(16);
+      }
+   }
+   &__title-link {
+      color: $blackcolor;
+      font-family: "DM Serif Text";
+      font-size: toRem(24);
+      line-height: 1.2;
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+   &__text {
+      color: $blackcolor;
+      font-family: "Inter";
+      font-size: toRem(16);
+      line-height: 1.6;
+
+      &:not(:last-child) {
+         margin-bottom: toRem(8);
+      }
+   }
+   &__body {
+      display: flex;
+      align-items: start;
+      column-gap: toRem(15);
+      &:hover {
+         .item-products__arrow {
+            transform: scale(1.2);
+         }
+         .item-products__text-link {
+            text-decoration: underline;
+         }
+      }
+   }
+   &__link {
+      flex: 1 1 auto;
+   }
+   &__text-link {
+      color: $orangecolor;
+      font-family: "Inter";
+      font-weight: 800;
+      line-height: 1.5;
+      @media (any-hover: hover) {
+      }
+   }
+   &__arrow {
+      width: toRem(24);
+      height: toRem(24);
+      transition: all ease 0.3s;
+      @media (any-hover: hover) {
+      }
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+      }
+   }
+}
+// -------------------------------------------------------------------------
